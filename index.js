@@ -88,6 +88,7 @@ for (let i = 0; i < minLength; i++) {
 
 
 // Bonus 1: 
+// a
 
 let longText = ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed diam arcu. Suspendisse consequat felis sed auctor venenatis. Duis quis eleifend purus. Suspendisse sed neque pellentesque, efficitur sem at, tempor ligula. Aenean aliquet lectus ac scelerisque facilisis. Ut sit amet massa lacus. Praesent id sapien quis dui interdum semper. Donec nec libero molestie, finibus arcu ut, tincidunt dui. Mauris imperdiet risus eget pharetra consectetur. Etiam non libero eu nisl vehicula egestas.
 
@@ -95,7 +96,7 @@ Ut aliquam interdum mi sit amet tincidunt. Nullam pulvinar, mi et dapibus feugia
 
 Integer mi diam, volutpat eget tincidunt nec, feugiat at massa. Sed quis justo et nisi suscipit consequat. Curabitur in tincidunt nulla. Mauris nisl orci, porta at egestas aliquam, congue ac lacus. In hac habitasse platea dictumst. Pellentesque nibh nulla, tempor vel felis in, mollis lobortis mi. Nullam aliquam maximus metus, quis blandit risus commodo nec. Vestibulum interdum, nisi sit amet dictum porttitor, neque lectus sollicitudin dolor, quis consectetur lectus tortor a leo. Ut eu tincidunt metus. Nullam non malesuada ligula, ac eleifend lectus. Suspendisse ante mi, vestibulum quis augue quis, hendrerit pulvinar ante. Quisque ligula eros, dapibus tristique ultricies id, fermentum vel orci. Aliquam congue nisl et lobortis consequat. Etiam vitae erat eget tortor porta dictum sed ut sapien. Nullam dapibus, lorem a pellentesque auctor, justo urna tristique est, id gravida ante nibh ut neque. `
 
-let counter = 0; 
+let counter = 1; 
 
 for (let i = 0; i < longText.length; i++) {
 
@@ -105,3 +106,35 @@ for (let i = 0; i < longText.length; i++) {
 }
 
 console.log(counter)
+
+// b
+
+let words = longText.split(" ")
+
+
+let numEt = 0;
+for (let i = 0; i < words.length; i++) {
+    if (words[i] === "et") {
+        numEt += 1;
+    }
+}
+
+console.log(`Numer of times et was in text: ${numEt}`)
+
+
+// bonus 2
+
+let phraseToCheck = "Was it a car or a cat I saw?" 
+let newPhraseToCheck = phraseToCheck.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
+
+let reversedWord = ""
+
+for (let i = newPhraseToCheck.length - 1; i > -1; i--) {
+    reversedWord += newPhraseToCheck[i]
+}
+
+if (reversedWord === newPhraseToCheck) {
+    console.log("its a Palindrome")
+} else {
+    console.log("its not a Palindrome")
+}
